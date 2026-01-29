@@ -1,0 +1,43 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Air - Live Reload",
+            "type": "shell",
+            "command": "air",
+            "args": [
+                "-c",
+                "${workspaceFolder}/.air.toml"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": "build",
+            "isBackground": true,
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "panel": "shared",
+                "focus": true,
+                "close": true,
+                "clear": true
+            },
+            "problemMatcher": {
+                "owner": "go",
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^.*(starting).*$",
+                    "endsPattern": "^.*(ready).*$"
+                }
+            }
+        }
+    ]
+}
