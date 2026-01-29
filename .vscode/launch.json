@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Go: Attach to Remote Debugger",
+            "type": "go",
+            "debugAdapter": "dlv-dap",
+            "request": "attach",
+            "mode": "remote",
+            "port": 2345,
+            "host": "127.0.0.1",
+            "showLog": true,
+            "apiVersion": 2,
+            "trace": "verbose",
+            "preLaunchTask": "Air - Live Reload"
+        },
+        {
+            "name": "Go: Launch & Debug Server",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/cmd/server/main.go",
+            "showLog": true,
+            "console": "integratedTerminal",
+            "preLaunchTask": "Run preload tasks"
+        }
+    ]
+}
